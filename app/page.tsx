@@ -1,3 +1,4 @@
+"use client";
 import {
   ArrowRight,
   Bug,
@@ -8,11 +9,15 @@ import {
   Github,
   Globe,
   Mail,
+  Menu,
   Server,
   ShieldCheck,
   Smartphone,
   Wrench,
+  X,
 } from "lucide-react";
+
+import { useState } from "react";
 
 const services = [
   {
@@ -102,20 +107,55 @@ const skills = [
 ];
 
 export default function Home() {
+	const [menuOpen, setMenuOpen] = useState(false);
   return (
     <main>
       <nav className="nav container">
-        <a className="brand" href="#top">
-          <span className="brand-mark">&lt;/&gt;</span>
-          <span>DebugLab</span>
-        </a>
-        <div className="nav-links">
-          <a href="#services">Services</a>
-          <a href="#projects">Projects</a>
-          <a href="#process">Process</a>
-          <a href="#contact" className="nav-cta">Work with me</a>
-        </div>
-      </nav>
+  <a
+    className="brand"
+    href="#top"
+    onClick={() => setMenuOpen(false)}
+  >
+    <span className="brand-mark">&lt;/&gt;</span>
+    <span>DebugLab</span>
+  </a>
+
+  <button
+    type="button"
+    className="menu-toggle"
+    onClick={() => setMenuOpen((open) => !open)}
+    aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+    aria-expanded={menuOpen}
+  >
+    {menuOpen ? <X size={24} /> : <Menu size={24} />}
+  </button>
+
+  <div className={`nav-links ${menuOpen ? "nav-open" : ""}`}>
+    <a href="#services" onClick={() => setMenuOpen(false)}>
+      Services
+    </a>
+
+    <a href="#projects" onClick={() => setMenuOpen(false)}>
+      Projects
+    </a>
+
+    <a href="/case-studies" onClick={() => setMenuOpen(false)}>
+      Case Studies
+    </a>
+
+    <a href="#process" onClick={() => setMenuOpen(false)}>
+      Process
+    </a>
+
+    <a
+      href="#contact"
+      className="nav-cta"
+      onClick={() => setMenuOpen(false)}
+    >
+      Work with me
+    </a>
+  </div>
+</nav>
 
       <section id="top" className="hero">
         <div className="container hero-grid">
