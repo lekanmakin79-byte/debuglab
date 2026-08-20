@@ -91,19 +91,47 @@ const projects = [
 ];
 
 const skills = [
-  "Next.js",
-  "React",
-  "TypeScript",
+  // Core Web Development
+  "HTML5",
+  "CSS3",
   "JavaScript",
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Node.js",
+  "PHP",
+  "MySQL",
+  "SQL",
+
+  // Backend & Data
   "Supabase",
   "PostgreSQL",
-  "Node.js",
+  "MongoDB",
+  "Python",
+  "FastAPI",
   "REST APIs",
+  "Firebase",
+
+  // Mobile & Development Tools
   "React Native",
   "Expo",
-  "Python",
-  "Git / GitHub",
-  "Vercel",
+  "Git",
+  "GitHub",
+
+  // Debugging & Application Support
+  "API Debugging",
+  "Database Debugging",
+  "Authentication",
+  "Session Debugging",
+  "TypeScript Troubleshooting",
+  "Production Build Troubleshooting",
+  "Deployment Troubleshooting",
+
+  // Other Technical Skills
+  "Excel",
+  "Power BI",
+  "MetaTrader 5",
+  "Data Analysis",
 ];
 
 export default function Home() {
@@ -180,6 +208,14 @@ export default function Home() {
               <a href="#projects" className="button secondary">
                 See my projects
               </a>
+			  <a
+                href="/Olalekan-Makinde-CV.pdf"
+                 target="_blank"
+                  rel="noopener noreferrer"
+                  className="button secondary"
+                    >
+                  Download CV
+                </a>
             </div>
             <div className="trust-row">
               <span><CheckCircle2 size={16} /> Real project experience</span>
@@ -306,8 +342,8 @@ export default function Home() {
             <span className="section-label">TECHNOLOGY</span>
             <h2>Tools I work with.</h2>
             <p>
-              A practical stack for modern web applications, mobile projects,
-              APIs, databases and deployment.
+              A practical technology stack for web development, application support, 
+			  debugging, APIs, databases, mobile applications and deployment.
             </p>
           </div>
           <div className="skill-list">
