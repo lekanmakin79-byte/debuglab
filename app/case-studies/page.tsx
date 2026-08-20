@@ -21,6 +21,7 @@ const caseStudies = [
     technologies: ["Next.js", "TypeScript", "Supabase", "API Routes"],
     icon: Server,
     status: "Debugging case study",
+    href: "/case-studies/metabolic-health-daily-plan",
   },
   {
     number: "02",
@@ -80,10 +81,10 @@ export default function CaseStudiesPage() {
             <ArrowLeft size={17} />
             Back to portfolio
           </Link>
-		  
-		  <div className="case-hero-label">
-          <span className="section-label">DEBUGGING CASE STUDIES</span>
-		  </div>
+
+          <div className="case-hero-label">
+            <span className="section-label">DEBUGGING CASE STUDIES</span>
+          </div>
 
           <h1>
             Real problems.
@@ -146,9 +147,21 @@ export default function CaseStudiesPage() {
                       ))}
                     </div>
 
-                    <div className="case-study-status">
-                      <CheckCircle2 size={16} />
-                      {study.status}
+                    <div className="case-study-card-actions">
+                      {study.href ? (
+                        <Link
+                          href={study.href}
+                          className="case-study-view-button"
+                        >
+                          View full investigation
+                          <ArrowRight size={17} />
+                        </Link>
+                      ) : (
+                        <span className="case-study-status">
+                          <CheckCircle2 size={16} />
+                          {study.status}
+                        </span>
+                      )}
                     </div>
                   </div>
 
@@ -193,16 +206,15 @@ export default function CaseStudiesPage() {
           </span>
         </div>
       </footer>
-	  
-	  <a
-  className="back-to-top"
-  href="#top"
-  aria-label="Back to top"
-  title="Back to top"
->
-  <ArrowUp size={20} />
-</a>
-	  
+
+      <a
+        className="back-to-top"
+        href="#top"
+        aria-label="Back to top"
+        title="Back to top"
+      >
+        <ArrowUp size={20} />
+      </a>
     </main>
   );
 }
