@@ -349,7 +349,7 @@ export default function Home() {
             </p>
           </div>
           <div className="contact-actions">
-            <a className="button primary" href="mailto: lekamakin79@gmail.com">
+            <a className="button primary" href="mailto:lekamakin79@gmail.com">
               <Mail size={18} /> Email me
             </a>
             <a className="button secondary" href="https://github.com/lekanmakin79-byte" target="_blank" rel="noreferrer">
