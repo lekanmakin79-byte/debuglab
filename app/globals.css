@@ -1201,3 +1201,26 @@ h1 span {
     background: rgba(255, 255, 255, 0.1);
   }
 }
+
+/* =========================================
+   HAMBURGER ICON - HIGH CONTRAST
+========================================= */
+
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    color: #111827 !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(17, 24, 39, 0.12);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  }
+
+  .menu-toggle:hover {
+    background: #f3f4f6 !important;
+    color: #000000 !important;
+  }
+
+  .menu-toggle svg {
+    stroke: currentColor;
+    stroke-width: 2.5;
+  }
+}
