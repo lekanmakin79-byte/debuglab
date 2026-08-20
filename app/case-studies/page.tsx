@@ -43,12 +43,12 @@ const caseStudies = [
     icon: Database,
     status: "Debugging case study",
   },
-  {
+    {
     number: "04",
     category: "BUILD / DEPLOYMENT",
     title: "Next.js Build & Deployment Troubleshooting",
     problem:
-      "Modern Next.js projects can fail during builds because of TypeScript errors, dependency issues, configuration problems or differences between local and production environments.",
+      "Production-build failures investigated through TypeScript errors, dependencies, configuration and deployment verification.",
     technologies: ["Next.js", "TypeScript", "GitHub", "Vercel"],
     icon: Wrench,
     status: "Debugging case study",
@@ -120,57 +120,63 @@ export default function CaseStudiesPage() {
 
           <div className="case-study-list">
             {caseStudies.map((study) => {
-              const Icon = study.icon;
+  const Icon = study.icon;
 
-              return (
-                <article className="case-study-card" key={study.number}>
-                  <div className="case-study-number">
-                    {study.number}
-                  </div>
+  return (
+    <article className="case-study-card" key={study.number}>
+      <div className="case-study-number">
+        {study.number}
+      </div>
 
-                  <div className="case-study-card-icon">
-                    <Icon size={24} />
-                  </div>
+      <div className="case-study-card-icon">
+        <Icon size={24} />
+      </div>
 
-                  <div className="case-study-card-content">
-                    <span className="project-type">{study.category}</span>
+      <div className="case-study-card-content">
+        <span className="project-type">{study.category}</span>
 
-                    <h2>{study.title}</h2>
+        <h2>{study.title}</h2>
 
-                    <p>
-                      <strong>Problem:</strong> {study.problem}
-                    </p>
+        <p>
+          <strong>Problem:</strong> {study.problem}
+        </p>
 
-                    <div className="tags">
-                      {study.technologies.map((technology) => (
-                        <span key={technology}>{technology}</span>
-                      ))}
-                    </div>
+        <div className="tags">
+          {study.technologies.map((technology) => (
+            <span key={technology}>{technology}</span>
+          ))}
+        </div>
 
-                    <div className="case-study-card-actions">
-                      {study.href ? (
-                        <Link
-                          href={study.href}
-                          className="case-study-view-button"
-                        >
-                          View full investigation
-                          <ArrowRight size={17} />
-                        </Link>
-                      ) : (
-                        <span className="case-study-status">
-                          <CheckCircle2 size={16} />
-                          {study.status}
-                        </span>
-                      )}
-                    </div>
-                  </div>
+        <div className="case-study-status">
+          <CheckCircle2 size={16} />
+          {study.status}
+        </div>
 
-                  <div className="case-study-arrow">
-                    <ArrowRight size={20} />
-                  </div>
-                </article>
-              );
-            })}
+       <div className="case-study-card-actions">
+  <Link
+    href={
+      study.number === "01"
+        ? "/case-studies/metabolic-health-daily-plan"
+        : study.number === "02"
+          ? "/case-studies/protected-dashboard-session"
+          : study.number === "03"
+            ? "/case-studies/supabase-data-flow"
+            : "/case-studies/nextjs-build-deployment"
+    }
+    className="case-study-view-button"
+  >
+    View Full Investigation
+    <ArrowRight size={17} />
+  </Link>
+</div>
+      </div>
+
+      <div className="case-study-arrow">
+        <ArrowRight size={20} />
+      </div>
+    </article>
+  );
+})}
           </div>
         </div>
       </section>
