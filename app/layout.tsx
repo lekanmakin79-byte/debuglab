@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 const siteUrl = "https://debuglab-eta.vercel.app";
@@ -85,7 +86,14 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-GB">
-      <body>{children}</body>
+      <body>
+  {children}
+
+  <Script
+    src="https://platform.linkedin.com/badges/js/profile.js"
+    strategy="afterInteractive"
+  />
+</body>
     </html>
   );
 }

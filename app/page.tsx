@@ -392,6 +392,26 @@ export default function Home() {
               <Github size={18} /> GitHub
             </a>
           </div>
+		  <div className="mt-6">
+  <div
+    className="badge-base LI-profile-badge"
+    data-locale="en_US"
+    data-size="medium"
+    data-theme="dark"
+    data-type="VERTICAL"
+    data-vanity="olalekan-makinde-b59552315"
+    data-version="v1"
+  >
+    <a
+      className="badge-base__link LI-simple-link"
+      href="https://uk.linkedin.com/in/olalekan-makinde-b59552315"
+	  target="_blank"
+      rel="noopener noreferrer"
+    >
+      Olalekan Makinde
+    </a>
+  </div>
+</div>
         </div>
       </section>
 
